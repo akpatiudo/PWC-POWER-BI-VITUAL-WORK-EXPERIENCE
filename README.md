@@ -8,20 +8,31 @@
 Customer Churn Retention Analysis is a Power BI Virtual Case Experience Organised by FORAGE whose slogan is “Inspiring and empowering future professionals.” I completed this internship since April 5th, 2023. I have two different works on this base on two different datasets, the dashboard to my first work is on my LinkedIn. For Data Analysis Process To make sense of any available data, a set of procedures must be completed. Identifying these procedures is essential as each stage is crucial in ensuring that the data is appropriately processed in a bid to offer useful and actionable information. Here are the steps I took in this process: 
 
 1  	Data Source
+
 2  	Data Preparation
+
 3  	Data Modelling
+
 4.	Data Analysis
+
 5.	Data Visualization
+
 6.	Insight
 
 ### *Problem Statement:*
 
 This task has been undertaken so as to: - Define proper KPI's
+
 •	Create a dashboard for the retention manager reflecting the KPI's
+
 •	Write a short email to him (the engagement partner) explaining your findings, and include suggestions as to what needs to be changed
+
 •	Customers who left within the last month
+
 •	Services each customer has signed up for: phone, multiple lines, internet, online security, online backup, device protection, tech support, and streaming TV and movies
+
 •	Customer account information: how long as a customer, contract, payment method, paperless billing, monthly charges, total charges and number of tickets opened in the categories administrative and technical
+
 •	Demographic info about customers – gender, age range, and if they have partners and dependents
 
 ### *Data Source*
