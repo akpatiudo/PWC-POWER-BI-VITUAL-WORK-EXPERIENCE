@@ -51,18 +51,30 @@ After the preliminary stages of Data Cleaning and Data Transformation, the Data 
 The modelled data was then analysed utilizing DAX functions and measures listed below:
 
 1	Average MonthlyCharges = AVERAGE('ChurnDataset'[MonthlyCharges])
+
 2	Average TotalCharges = AVERAGE('ChurnDataset'[TotalCharges])
+
 3	Churn count = CALCULATE(COUNT('ChurnDataset'[Churn]), ALLSELECTED('ChurnDataset'[Churn]),'ChurnDataset'[Churn] = "Yes")
+
 4	Churn rate % = DIVIDE(CALCULATE(COUNT('ChurnDataset'[Churn]), 'ChurnDataset'[Churn] = "yes”), COUNT('ChurnDataset'[Churn]), 0)
-5	Dependent in % = DIVIDE(CALCULATE(COUNT('ChurnDataset'[Dependents]), 'ChurnDataset'[Dependents]="Yes",'ChurnDataset'[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[Dependents]),'ChurnDataset'[Churn]="Yes"), 0)
-6	Device protection in % = DIVIDE(CALCULATE(COUNT('ChurnDataset'[DeviceProtection]), 'ChurnDataset'[DeviceProtection] ="Yes", ' ChurnDataset’[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[DeviceProtection]),'ChurnDataset'[Churn]="Yes"),0)
+
+5	Dependent in % = DIVIDE(CALCULATE(COUNT('ChurnDataset'[Dependents]), 'ChurnDataset'[Dependents]="Yes",'ChurnDataset'[Churn]="Yes"), 
+  CALCULATE(COUNT('ChurnDataset'[Dependents]),'ChurnDataset'[Churn]="Yes"), 0)
+  
+6	Device protection in % = DIVIDE(CALCULATE(COUNT('ChurnDataset'[DeviceProtection]), 'ChurnDataset'[DeviceProtection] ="Yes", ' ChurnDataset’[Churn]="Yes"),       CALCULATE(COUNT('ChurnDataset'[DeviceProtection]),'ChurnDataset'[Churn]="Yes"),0)
 7	Online backup in % = DIVIDE(CALCULATE(COUNT('ChurnDataset'[OnlineBackup]), 'ChurnDataset'[OnlineBackup] ="Yes", ' ChurnDataset'[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[OnlineBackup]),'ChurnDataset'[Churn]="Yes"),0)
+
 8	Online security in % =DIVIDE(CALCULATE(COUNT('ChurnDataset'[OnlineSecurity]), 'ChurnDataset'[OnlineSecurity] ="Yes", ' ChurnDataset '[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[OnlineSecurity]),'ChurnDataset'[Churn]="Yes"),0)
 9	Partner in % = DIVIDE(CALCULATE(COUNT('ChurnDataset'[Partner]),'ChurnDataset'[Partner]="Yes",'ChurnDataset'[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[Partner]), 'ChurnDataset'[Churn]="Yes"), 0)
+
 10	Phone service in % =DIVIDE(CALCULATE(COUNT('ChurnDataset'[PhoneService]), 'ChurnDataset'[PhoneService] ="Yes", ' ChurnDataset '[Churn]="Yes"),CALCULATE(COUNT('ChurnDataset'[PhoneService]),'ChurnDataset'[Churn]="Yes"),0)
+
 11	SenioCitizen in % = DIVIDE(CALCULATE(COUNT('ChurnDataset'[SeniorCitizen]),'ChurnDataset'[SeniorCitizen]=1,'ChurnDataset'[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[SeniorCitizen]),'ChurnDataset'[Churn]="Yes"), 0)
+
 12	Streaming Movies in % =DIVIDE(CALCULATE(COUNT('ChurnDataset'[StreamingMovies]), 'ChurnDataset'[StreamingMovies] ="Yes", ' ChurnDataset '[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[StreamingMovies]),'ChurnDataset'[Churn]="Yes"),0)
+
 13	Streaming TV in % =DIVIDE(CALCULATE(COUNT('ChurnDataset'[StreamingTV]), 'ChurnDataset'[StreamingTV] ="Yes", ' ChurnDataset '[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[StreamingTV]),'ChurnDataset'[Churn]="Yes"),0)
+
 14	Tech Support in % =DIVIDE(CALCULATE(COUNT('ChurnDataset'[TechSupport]), 'ChurnDataset'[TechSupport] ="Yes", ' ChurnDataset '[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[TechSupport]),'ChurnDataset'[Churn]="Yes"),0)
 
 ### *Data Visualization* 
