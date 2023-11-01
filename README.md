@@ -32,13 +32,20 @@ The dataset was provided by FORAGE, it is in data file 02 Churn-Dataset.xlsx. cl
 
 The raw data was loaded into Power BI Desktop, data cleaning and transformation was done in Power Query saved and proceeded to data Modelling
 •	ChurnDataset is give table named:
+
 •	ChurnDatase which has 23 columns and 7043 rows of observation
+
 •	Data Cleaning for the dataset was done in the power query editor as follows:
+
 •	Replaced the value is SeniorCitizen N coverted No and Y converted Yes
+
 •	In the new table, two columns were added: one additional conditional column named loyalty using M-formula below, and non-conditional column named left-with. 
 loyalty = SWITCH(TRUE(),'ChurnDataset'[tenure]<=12,"< 1 year",'ChurnDataset'[tenure]<=24,"< 2 years",'ChurnDataset'[tenure]<=36,"< 3 years",'ChurnDataset'[tenure]<=48,"< 4 years", 'ChurnDataset'[tenure]<=60,"< 5 years",'ChurnDataset'[tenure]<=72,"< 6 years")
+
 •	Removed Unnecessary columns
+
 •	Removed Unnecessary rows
+
 •	Each of the columns in the table were validated to have the correct data type
 
 ### *Data Modelling*
@@ -62,9 +69,11 @@ The modelled data was then analysed utilizing DAX functions and measures listed 
   CALCULATE(COUNT('ChurnDataset'[Dependents]),'ChurnDataset'[Churn]="Yes"), 0)
   
 6	Device protection in % = DIVIDE(CALCULATE(COUNT('ChurnDataset'[DeviceProtection]), 'ChurnDataset'[DeviceProtection] ="Yes", ' ChurnDataset’[Churn]="Yes"),       CALCULATE(COUNT('ChurnDataset'[DeviceProtection]),'ChurnDataset'[Churn]="Yes"),0)
+
 7	Online backup in % = DIVIDE(CALCULATE(COUNT('ChurnDataset'[OnlineBackup]), 'ChurnDataset'[OnlineBackup] ="Yes", ' ChurnDataset'[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[OnlineBackup]),'ChurnDataset'[Churn]="Yes"),0)
 
 8	Online security in % =DIVIDE(CALCULATE(COUNT('ChurnDataset'[OnlineSecurity]), 'ChurnDataset'[OnlineSecurity] ="Yes", ' ChurnDataset '[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[OnlineSecurity]),'ChurnDataset'[Churn]="Yes"),0)
+
 9	Partner in % = DIVIDE(CALCULATE(COUNT('ChurnDataset'[Partner]),'ChurnDataset'[Partner]="Yes",'ChurnDataset'[Churn]="Yes"), CALCULATE(COUNT('ChurnDataset'[Partner]), 'ChurnDataset'[Churn]="Yes"), 0)
 
 10	Phone service in % =DIVIDE(CALCULATE(COUNT('ChurnDataset'[PhoneService]), 'ChurnDataset'[PhoneService] ="Yes", ' ChurnDataset '[Churn]="Yes"),CALCULATE(COUNT('ChurnDataset'[PhoneService]),'ChurnDataset'[Churn]="Yes"),0)
